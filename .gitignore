@@ -1,0 +1,18 @@
+#  Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Exclude terraform.tfvars files, which are likely to contain sentitive data,
+# such as password, private keys, and other secrets. These should not be part of
+# version control
+#
+terraform.tfvars
+
+# local terraform vars
+local.*.tfvars
+
+# User kubernetes cluster configs
+kubeconfig
