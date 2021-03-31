@@ -45,7 +45,7 @@ module "app-mesh" {
 
 module "container-insights" {
   source       = "Young-ook/eks/aws//modules/container-insights"
-  enabled      = false
+  enabled      = true
   cluster_name = module.container.cluster.name
   oidc         = module.container.oidc
   tags         = var.tags
