@@ -30,7 +30,7 @@ module "ci" {
     type      = "GITHUB"
     location  = "https://github.com/Young-ook/aws-modernization-with-spinnaker.git"
     buildspec = join("/", [each.key, "buildspec.yml"])
-    version   = "dna2"
+    version   = "main"
   }
   policy_arns = [
     module.ecr[each.key].policy_arns["read"],
