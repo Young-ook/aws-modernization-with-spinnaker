@@ -18,11 +18,12 @@ module "ci" {
   name     = join("-", [each.key, var.name])
   tags     = var.tags
   environment_config = {
-    image           = "aws/codebuild/docker:17.09.0"
+    image           = "aws/codebuild/standard:4.0"
     privileged_mode = true
     environment_variables = {
       ARTIFACT_BUCKET = module.spinnaker.artifact_repository
       REPOSITORY_URI  = module.ecr[each.key].url
+      APP_NAME        = each.key
     }
   }
   source_config = {
