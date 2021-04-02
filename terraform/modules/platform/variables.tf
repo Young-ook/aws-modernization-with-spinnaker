@@ -1,3 +1,9 @@
+### kubectl
+variable "eks_kubeconfig" {
+  description = "Path to script for eks kubeconfig file update"
+  type        = string
+}
+
 ### description
 variable "name" {
   description = "The logical name of the module instance"
