@@ -42,7 +42,7 @@ module "ci" {
 ### platform/spinnaker
 module "spinnaker" {
   source             = "Young-ook/spinnaker/aws"
-  version            = "2.1.4"
+  version            = "2.1.8"
   name               = "spinnaker"
   tags               = var.tags
   region             = "ap-northeast-2"

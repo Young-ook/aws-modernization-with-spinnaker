@@ -6,13 +6,6 @@ module "frigga" {
   detail = var.detail
 }
 
-### platform
-module "platform" {
-  source = "./modules/platform"
-  name   = module.frigga.name
-  tags   = var.tags
-}
-
 ### foundation
 module "foundation" {
   source = "./modules/foundation"
@@ -29,4 +22,12 @@ module "application" {
   name    = module.frigga.name
   tags    = var.tags
   subnets = values(module.foundation.subnets["private"])
+}
+
+### platform
+module "platform" {
+  source         = "./modules/platform"
+  name           = module.frigga.name
+  tags           = var.tags
+  eks_kubeconfig = module.application.eks_kubeconfig
 }
