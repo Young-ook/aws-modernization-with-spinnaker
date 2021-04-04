@@ -1,7 +1,6 @@
 apiVersion: appmesh.k8s.aws/v1beta2
 kind: VirtualRouter
 metadata:
-  namespace: yelb
   name: yelb-appserver
 spec:
   awsName: yelb-appserver-virtual-router

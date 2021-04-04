@@ -2,7 +2,6 @@ apiVersion: appmesh.k8s.aws/v1beta2
 kind: VirtualNode
 metadata:
   name: yelb-appserver-v2
-  namespace: yelb
 spec:
   awsName: yelb-appserver-virtual-node-v2
   podSelector:
@@ -14,7 +13,8 @@ spec:
         protocol: http
   serviceDiscovery:
     dns:
-      hostname: yelb-appserver-v2.yelb.svc.cluster.local
+      hostname: >-
+        yelb-appserver-v2.${#currentStage()['context']['namespaceOverride']}.svc.cluster.local
   backends:
     - virtualService:
        virtualServiceRef:
@@ -26,7 +26,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: yelb
   name: yelb-appserver-v2
   labels:
     app: yelb-appserver-v2
@@ -42,7 +41,6 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: yelb
   name: yelb-appserver-v2
 spec:
   replicas: 1
