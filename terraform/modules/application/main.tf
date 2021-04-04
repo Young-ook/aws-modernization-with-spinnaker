@@ -29,7 +29,6 @@ provider "helm" {
 
 module "alb-ingress" {
   source       = "Young-ook/eks/aws//modules/alb-ingress"
-  version      = "1.4.7"
   enabled      = true
   cluster_name = module.container.cluster.name
   oidc         = module.container.oidc
@@ -38,7 +37,6 @@ module "alb-ingress" {
 
 module "app-mesh" {
   source       = "Young-ook/eks/aws//modules/app-mesh"
-  version      = "1.4.8"
   enabled      = true
   cluster_name = module.container.cluster.name
   oidc         = module.container.oidc
@@ -50,7 +48,6 @@ module "app-mesh" {
 
 module "container-insights" {
   source       = "Young-ook/eks/aws//modules/container-insights"
-  version      = "1.4.7"
   enabled      = true
   cluster_name = module.container.cluster.name
   oidc         = module.container.oidc
