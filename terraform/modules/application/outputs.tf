@@ -1,6 +1,6 @@
 output "eks_kubeconfig" {
   value = {
-    context = module.container.cluster.name
+    context = module.container.cluster.id
     script  = module.container.kubeconfig
   }
 }
