@@ -14,6 +14,9 @@ module "container" {
       instance_type = "m5.xlarge"
     }
   ]
+  policy_arns = [
+    "arn:aws:iam::aws:policy/AWSXRayDaemonWriteAccess"
+  ]
 }
 
 provider "helm" {
