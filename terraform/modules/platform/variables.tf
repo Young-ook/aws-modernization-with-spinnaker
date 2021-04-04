@@ -1,7 +1,7 @@
-### kubectl
+### kubernetes/config
 variable "eks_kubeconfig" {
-  description = "Path to script for eks kubeconfig file update"
-  type        = string
+  description = "Attributes of eks kubeconfig for spinnaker integration"
+  type        = map
 }
 
 ### description

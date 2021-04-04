@@ -21,7 +21,7 @@ rm kubeconfig
 
 ${halyard_kubectl_exec} hal config provider kubernetes account add eks \
   --kubeconfig-file '/home/spinnaker/.kube/kubeconfig' \
-  --context spinnaker-managed \
+  --context ${eks_kubeconfig_context} \
   --environment dev
 ${halyard_kubectl_exec} hal config provider kubernetes enable
 

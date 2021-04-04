@@ -1,5 +1,8 @@
 output "eks_kubeconfig" {
-  value = module.container.kubeconfig
+  value = {
+    context = module.container.cluster.name
+    script  = module.container.kubeconfig
+  }
 }
 
 output "eks_tags" {
