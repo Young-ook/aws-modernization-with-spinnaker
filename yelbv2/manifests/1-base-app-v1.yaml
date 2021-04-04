@@ -1,12 +1,11 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: yelb
+  name: '${#currentStage()[''context''][''namespaceOverride'']}'
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: yelb
   name: redis-server
   labels:
     app: redis-server
@@ -22,7 +21,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: yelb
   name: yelb-db
   labels:
     app: yelb-db
@@ -38,7 +36,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: yelb
   name: yelb-appserver
   labels:
     app: yelb-appserver
@@ -54,7 +51,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  namespace: yelb
   name: yelb-ui
   labels:
     app: yelb-ui
@@ -71,7 +67,6 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  namespace: yelb
   name: yelb-ingress
   annotations:
     kubernetes.io/ingress.class: alb
@@ -92,7 +87,6 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: yelb
   name: yelb-ui
 spec:
   replicas: 1
@@ -115,7 +109,6 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: yelb
   name: redis-server
 spec:
   selector:
@@ -138,7 +131,6 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: yelb
   name: yelb-db
 spec:
   replicas: 1
@@ -161,7 +153,6 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: yelb
   name: yelb-appserver
 spec:
   replicas: 1

@@ -9,7 +9,8 @@ resource "local_file" "halconfig" {
     spinnaker_bucket            = module.spinnaker.bucket_name
     spinnaker_managed_aws_role  = module.spinnaker-managed.role_arn
     spinnaker_update_kubeconfig = module.spinnaker.kubeconfig
-    eks_update_kubeconfig       = var.eks_kubeconfig
+    eks_update_kubeconfig       = var.eks_kubeconfig["script"]
+    eks_kubeconfig_context      = var.eks_kubeconfig["context"]
     halyard_kubectl_exec        = "kubectl -n spinnaker exec -it cd-spinnaker-halyard-0 --"
   })
   filename        = "${path.cwd}/halconfig.sh"
