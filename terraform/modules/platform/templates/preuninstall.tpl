@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/bash -x
 
 export KUBECONFIG=kubeconfig
 
@@ -35,7 +35,7 @@ volumes=$(aws ec2 describe-volumes \
   --region ${aws_region} \
   --output text)
 
-for volume in volumes
+for volume in $volumes
 do
   aws ec2 delete-volume --volume-id $volume --region ${aws_region}
 done
