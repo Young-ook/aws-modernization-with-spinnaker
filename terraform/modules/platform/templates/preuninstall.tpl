@@ -1,8 +1,15 @@
 #!/bin/bash -ex
 
-export KUBECONFIG=spinnaker_kubeconfig
+export KUBECONFIG=kubeconfig
 
+${eks_update_kubeconfig}
+kubectl delete ns ${eks_kubeconfig_context}
+kubectl delete mesh yelb-mesh
+
+${spinnaker_update_kubeconfig}
 kubectl delete ns spinnaker
+
+rm kubeconfig spinnaker_kubeconfig
 
 aws s3api delete-objects \
   --region ${aws_region} \

@@ -30,9 +30,12 @@ resource "local_file" "tunnel" {
 
 resource "local_file" "preuninstall" {
   content = templatefile("${path.module}/templates/preuninstall.tpl", {
-    aws_region                = module.aws-partitions.region.name
-    spinnaker_bucket          = module.spinnaker.bucket_name
-    spinnaker_artifact_bucket = module.spinnaker.artifact_repository
+    aws_region                  = module.aws-partitions.region.name
+    spinnaker_bucket            = module.spinnaker.bucket_name
+    spinnaker_artifact_bucket   = module.spinnaker.artifact_repository
+    spinnaker_update_kubeconfig = module.spinnaker.kubeconfig
+    eks_update_kubeconfig       = var.eks_kubeconfig["script"]
+    eks_kubeconfig_context      = var.eks_kubeconfig["context"]
   })
   filename        = "${path.cwd}/preuninstall.sh"
   file_permission = "0700"
