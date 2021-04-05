@@ -29,4 +29,15 @@ aws s3api delete-objects \
       --region ${aws_region} \
       --output json)"
 
+volumes=$(aws ec2 describe-volumes \
+  --filters Name=tag:kubernetes.io/created-for/pvc/namespace,Values=spinnaker \
+  --query "Volumes[*].{ID:VolumeId}" \
+  --region ${aws_region} \
+  --output text)
+
+for volume in volumes
+do
+  aws ec2 delete-volume --volume-id $volume --region ${aws_region}
+done
+
 unset KUBECONFIG
