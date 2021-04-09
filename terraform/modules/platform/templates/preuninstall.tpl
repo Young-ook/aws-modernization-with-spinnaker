@@ -3,8 +3,9 @@
 export KUBECONFIG=kubeconfig
 
 ${eks_update_kubeconfig}
-kubectl delete mesh yelb-mesh
 kubectl delete ns ${eks_kubeconfig_context}
+
+aws appmesh delete-mesh --mesh-name yelb-mesh --region ${aws_region}
 
 ${spinnaker_update_kubeconfig}
 kubectl delete ns spinnaker
