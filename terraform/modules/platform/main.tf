@@ -56,7 +56,7 @@ module "spinnaker" {
       max_size      = 2
       desired_size  = 1
       disk_size     = "500"
-      instance_type = "m5.4xlarge"
+      instance_type = "m5.xlarge"
     }
   ]
   aurora_cluster = {}
