@@ -1,13 +1,32 @@
-baseURL = "/"
-languageCode = "ko-KR"
-defaultContentLanguage = "kr"
-
 title = "AWS Modernization with Spinnaker"
 theme = "hugo-theme-learn"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= "true"
+defaultContentLanguage = "ko"
 uglyurls = "true"
 enableEmoji = true
+baseURL = "/"
+
+[languages]
+  [languages.ko]
+    languageName = "한국어"
+    languageCode = "ko-kr"
+    contentDir = "content/ko"
+    [languages.ko.menu]
+      [[languages.ko.menu.main]]
+        name = "Introduction"
+        url = "/ko"
+        weight = 0
+
+  [languages.en]
+    languageName = "English"
+    languageCode = "en-us"
+    contentDir = "content/en"
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        name = "Introduction"
+        url = "/en"
+        weight = 0
 
 [params]
   # Prefix URL to edit current page. Will display an "Edit this page" button on top right hand corner of every page.
