@@ -1,5 +1,5 @@
 ---
-title: "Conclusion"
+title: "실습 종료"
 chapter: true
 weight: 90
 ---

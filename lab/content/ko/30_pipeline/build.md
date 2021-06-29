@@ -1,5 +1,5 @@
 ---
-title: "2.2 Build"
+title: "2.2 빌드"
 chapter: false
 weight: 20
 ---

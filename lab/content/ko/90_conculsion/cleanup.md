@@ -1,5 +1,5 @@
 ---
-title: "Cleanup"
+title: "실습 환경 정리"
 chapter: false
 weight: 10
 ---
@@ -18,5 +18,4 @@ EC2 실습 환경으로 돌아옵니다. 여전히 Port Forward 로그가 찍히
 terraform destroy -var-file default.tfvars --auto-approve
 ```
 
-삭제가 완료되면 EC2 인스턴스를 빠져 나옵니다. AWS 콘솔로 들어가서 CloudFormation 서비스로 이동합니다.
-**스택 이름**이 *DevOpsWorkshopWorkspace* 인 것을 선택하고 삭제합니다.
+삭제가 완료되면 AWS 콘솔로 들어가서 IAM 서비스로 이동합니다. 역할(Roles)을 선택하고 *DevOpsWorkshop-Admin* 을 검색합니다. 해당 역할을 선택 후 삭제 합니다. 다음, Cloud9 서비스로 이동합니다. 작업을 위해 생성한 환경을 삭제합니다.

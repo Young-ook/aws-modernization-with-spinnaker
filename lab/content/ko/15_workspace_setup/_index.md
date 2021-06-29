@@ -1,9 +1,9 @@
 ---
-title: "Workshop Setup"
+title: "실습 환경 구성"
 chapter: true
-weight: 10
+weight: 15
 ---
 
-# 워크샵 준비
+# 실습 환경 구성
 
 {{% children showhidden="true" %}}

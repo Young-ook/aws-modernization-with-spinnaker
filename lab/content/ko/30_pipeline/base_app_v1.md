@@ -1,10 +1,10 @@
 ---
-title: "2.3 Base App v1"
+title: "2.3 베이스 앱 v1"
 chapter: false
 weight: 30
 ---
 
-## Base App
+## 베이스 앱
 
 기본 설정의 컨테이터 어플리케이션을 배포 합니다. 데이터베이스, 캐시, 어플리케이션 서버, UI 서버를 배포합니다.
 

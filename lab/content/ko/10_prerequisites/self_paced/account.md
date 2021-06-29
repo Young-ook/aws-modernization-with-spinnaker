@@ -1,28 +1,24 @@
 ---
-title: "Create an AWS account"
+title: "AWS 계정 생성"
 chapter: false
-weight: 1
+weight: 13
 ---
 
 {{% notice warning %}}
-Your account must have the ability to create new IAM roles and scope other IAM permissions.
+계정에는 새 IAM 역할을 생성하고 다른 IAM 권한의 범위를 지정할 수있는 권한이 있어야 합니다.
 {{% /notice %}}
 
-1. If you don't already have an AWS account with Administrator access: [create
-one now by clicking here](https://aws.amazon.com/getting-started/)
+1. 관리자 액세스 권한이있는 AWS 계정이 아직없는 경우 : [여기를 클릭하여 지금 생성](https://console.aws.amazon.com/iam/home?#/users$new)
 
-1. Once you have an AWS account, ensure you are following the remaining workshop steps
-as an IAM user with administrator access to the AWS account:
-[Create a new IAM user to use for the workshop](https://console.aws.amazon.com/iam/home?#/users$new)
+1. AWS 계정이 있으면 AWS 계정에 대한 관리자 액세스 권한이있는 IAM 사용자로서 나머지 워크숍 단계를 따르고 있는지 확인하십시오. : [워크숍에 사용할 새 IAM 사용자 생성](https://console.aws.amazon.com/iam/home?#/users$new)
 
-1. Enter the user details:
-![Create User](/images/aws/iam-1-create-user.png)
+1. 사용자 세부 정보를 입력합니다.
+![사용자 만들기](/images/aws/iam-1-create-user.png)
 
-1. Attach the AdministratorAccess IAM Policy:
-![Attach Policy](/images/aws/iam-2-attach-policy.png)
+1. AdministratorAccess IAM 정책을 연결합니다.
+![정책 첨부](/images/aws/iam-2-attach-policy.png)
 
-1. Click to create the new user:
-![Confirm User](/images/aws/iam-3-create-user.png)
+1. 클릭하여 새 사용자를 만듭니다.
+![사용자 확인](/images/aws/iam-3-create-user.png)
 
-1. Take note of the login URL and save:
-![Login URL](/images/aws/iam-4-save-url.png)
+1. 로그인 URL을 기록하고 다음을 저장합니다.
