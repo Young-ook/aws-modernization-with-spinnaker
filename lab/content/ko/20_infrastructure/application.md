@@ -1,12 +1,12 @@
 ---
-title: "1.2 Application"
+title: "1.2 어플리케이션"
 chapter: false
 weight: 20
 ---
 
-## Application
+## 어플리케이션
 
-Application 모듈은 어플리케이션이 실행될 EKS(Elastic Kubernetes Service) 클러스터를 생성합니다. EKS를 배치할 곳은 이전 Foundation 모듈에서 생성한 VPC입니다. 테라폼 소스를 보면 Foundation 모듈에서 생성한 Private Subnet 목록을 Application 모듈의 Container 모듈에 전달하는 것을 확인할 수 있습니다.
+어플리케이션(Application) 모듈은 어플리케이션이 실행될 EKS(Elastic Kubernetes Service) 클러스터를 생성합니다. EKS를 배치할 곳은 이전 Foundation 모듈에서 생성한 VPC입니다. 테라폼 소스를 보면 Foundation 모듈에서 생성한 Private Subnet 목록을 Application 모듈의 Container 모듈에 전달하는 것을 확인할 수 있습니다.
 
 그리고, EKS와 함께 사용할 수 있는 유용한 추가 기능들을 설치합니다. 본 실습에서는 테라폼의 Helm 프로바이더를 이용하여 App Mesh Controller, Amazon CloudWatch ContainerInsights Agents, AWS ALB Ingress Controller를 설치합니다.
 

@@ -1,7 +1,7 @@
 ---
-title: "Part 1: Infrastructure"
+title: "단계 1: 인프라스트럭처"
 chapter: true
-weight: 25
+weight: 20
 ---
 
 # 인프라스트럭처 구성

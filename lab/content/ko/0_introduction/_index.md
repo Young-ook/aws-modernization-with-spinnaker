@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "시작하기"
 weight: 5
 chapter: true
 draft: false

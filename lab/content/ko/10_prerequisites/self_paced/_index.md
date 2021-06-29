@@ -1,13 +1,13 @@
 ---
-title: "...on your own"
+title: "자체 계정에서 실행"
 chapter: true
-weight: 11
+weight: 12
 ---
 
-### Running the workshop on your own
+### 자체 계정에서 워크샵 실습하기
 
 {{% notice warning %}}
-Only complete this section if you are running the workshop on your own. If you are at an AWS hosted event (such as re:Invent, Kubecon, Immersion Day, etc), go to [Start the workshop at an AWS event](../aws_event/).
+workshop을 직접 실행하는 경우에만 이 섹션을 작성하십시오. AWS에서 주최하는 이벤트 (예 : re:Invent, Kubecon, Immersion Day 등)에 있는 경우 [AWS 호스팅 이벤트 참석](../aws_event/)로 이동하십시오.
 {{% /notice %}}
 
 {{% children %}}

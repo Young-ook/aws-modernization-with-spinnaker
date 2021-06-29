@@ -1,10 +1,10 @@
 ---
-title: "2.6 Weighted Route"
+title: "2.6 가중치기반 라우팅"
 chapter: false
 weight: 60
 ---
 
-## Traffic Management
+## 트래픽 제어
 
 새 버전의 어플리케이션 서버에도 트래픽을 보내도록 설정합니다. 예제에서는 50:50으로 예전 서버와 새 버전의 서버로 트래픽을 보내도록 설정합니다.
 

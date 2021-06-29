@@ -1,5 +1,5 @@
 ---
-title: "2.1 Application"
+title: "2.1 어플리케이션"
 chapter: false
 weight: 10
 ---

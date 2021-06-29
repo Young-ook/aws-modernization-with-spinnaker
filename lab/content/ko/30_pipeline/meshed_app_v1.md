@@ -1,10 +1,10 @@
 ---
-title: "2.4 Meshed App v1"
+title: "2.4 메시드 앱 v1"
 chapter: false
 weight: 40
 ---
 
-## Meshed App
+## 메시드 앱(Meshed App) v1
 
 기본 설정 어플리케이션에 App Mesh를 적용합니다.
 

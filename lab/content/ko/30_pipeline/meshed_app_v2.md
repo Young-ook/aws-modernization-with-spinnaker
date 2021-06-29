@@ -1,10 +1,10 @@
 ---
-title: "2.5 Meshed App v2"
+title: "2.5 메시드 앱 v2"
 chapter: false
 weight: 50
 ---
 
-## Meshed App V2
+## 메시드 앱(Meshed App) V2
 
 새 버전의 어플리케이션 서버를 배포합니다. AWS CodeBuild 파이프라인에서 생성한 새로운 컨테이너 이미지를 이용하여 배포할 것 입니다.
 
