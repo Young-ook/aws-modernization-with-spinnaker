@@ -5,3 +5,5 @@ In this workshop, you will get a hands-on introduction to cloud-native applicati
 On “day one,” you’ll start by setting up the infrastructure for the vote service. You’ll then be tasked with creating dashboards and alerts to track the health of the system as the first requests start rolling in.
 
 Before “day two,” you’ll have the opportunity to apply service mesh on your environment to ensure that what you set up is working as expected. You’ll also learn how to manage the complicated distributed system effectively for “day two.”
+
+Workshop: https://bit.ly/3x7xekN
