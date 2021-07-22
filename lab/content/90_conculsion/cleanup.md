@@ -15,7 +15,14 @@ EC2 실습 환경으로 돌아옵니다. 여전히 Port Forward 로그가 찍히
 스크립트 수행이 완료되면, 테라폼 명령으로 인프라스트럭처를 제거합니다.
 
 ```sh
-terraform destroy -var-file default.tfvars --auto-approve
+terraform destroy --auto-approve
+```
+
+인프라스트럭처 삭제가 완료되면, 테라폼 백엔드를 정리합니다.
+
+```sh
+cd backend/
+terraform destroy --auto-approve
 ```
 
 삭제가 완료되면 AWS 콘솔로 들어가서 IAM 서비스로 이동합니다. 역할(Roles)을 선택하고 *DevOpsWorkshop-Admin* 을 검색합니다. 해당 역할을 선택 후 삭제 합니다. 다음, Cloud9 서비스로 이동합니다. 작업을 위해 생성한 환경을 삭제합니다.

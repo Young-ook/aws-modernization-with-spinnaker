@@ -1,7 +1,7 @@
 ---
-title: "1.1 파운데이션"
+title: "1.2 파운데이션"
 chapter: false
-weight: 10
+weight: 20
 ---
 
 ## 파운데이션
@@ -19,7 +19,7 @@ terraform init
 ### 테라폼 실행
 
 ```sh
-terraform apply -var-file default.tfvars -target module.foundation
+terraform apply -target module.foundation
 ```
 
 명령을 수행하면, AWS 자원을 생성하기 위한 실행 계획이 표시됩니다. 테라폼 코드를 바탕으로 어떠한 자원을 생성할 지, 몇 개를 만들 지 등을 미리 보기 할 수 있습니다. 마지막으로 실제 **반영**할 것인지 확인하는 절차가 나오며, *yes* 를 입력해서 다음으로 넘어갑니다.

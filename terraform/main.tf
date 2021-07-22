@@ -1,4 +1,4 @@
-# frigga naming
+### frigga naming
 module "frigga" {
   source = "Young-ook/spinnaker/aws//modules/frigga"
   name   = var.name
@@ -8,8 +8,8 @@ module "frigga" {
 
 ### foundation
 module "foundation" {
-  source = "./modules/foundation"
-  name   = module.frigga.name
+  source     = "./modules/foundation"
+  name       = module.frigga.name
   tags = merge(
     var.tags,
     (module.application.eks_tags.shared == null ? {} : module.application.eks_tags.shared)

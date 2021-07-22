@@ -1,7 +1,7 @@
 ---
-title: "1.3 플랫폼"
+title: "1.4 플랫폼"
 chapter: false
-weight: 30
+weight: 40
 ---
 
 ## 플랫폼
@@ -19,7 +19,7 @@ terraform init
 ### 테라폼 실행
 
 ```sh
-terraform apply -var-file default.tfvars -target module.platform
+terraform apply -target module.platform
 ```
 
 명령을 수행하면, AWS 자원을 생성하기 위한 실행 계획이 표시되며, 실제 **반영**할 것인지 확인할 때 *yes* 를 입력해서 다음으로 넘어갑니다.
