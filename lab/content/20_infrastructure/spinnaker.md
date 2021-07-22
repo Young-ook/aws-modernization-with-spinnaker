@@ -1,7 +1,7 @@
 ---
-title: "1.4 스핀에커"
+title: "1.5 스핀에커"
 chapter: false
-weight: 40
+weight: 50
 ---
 
 ## 스핀에커

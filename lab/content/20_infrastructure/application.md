@@ -1,7 +1,7 @@
 ---
-title: "1.2 어플리케이션"
+title: "1.3 어플리케이션"
 chapter: false
-weight: 20
+weight: 30
 ---
 
 ## 어플리케이션
@@ -21,7 +21,7 @@ terraform init
 ### 테라폼 실행
 
 ```sh
-terraform apply -var-file default.tfvars -target module.application
+terraform apply -target module.application
 ```
 
 명령을 수행하면, AWS 자원을 생성하기 위한 실행 계획이 표시되며, 실제 **반영**할 것인지 확인할 때 *yes* 를 입력해서 다음으로 넘어갑니다.
