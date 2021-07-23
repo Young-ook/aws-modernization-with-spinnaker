@@ -17,7 +17,7 @@ weight: 50
 스크립트 실행이 끝나면 다음 명령을 입력합니다.
 
 ```
-kubectl -n spinnaker port-forward svc/spin-deck 8080:9000
+./tunnel.sh
 ```
 
 아래와 같이 연결 성공 로그가 찍히는 것을 확인했다면, 화면 상단의 *Preview* 와 *Preview Running Application* 을 눌러서 접속합니다. 웹 브라우저는 Chrome 또는 Firefox를 권장합니다.

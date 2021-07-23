@@ -21,7 +21,7 @@ resource "local_file" "tunnel" {
   content = join("\n", [
     "#!/bin/bash -ex",
     "export KUBECONFIG=spinnaker_kubeconfig",
-    "kubectl -n spinnaker port-forward svc/spin-deck 9000:9000",
+    "kubectl -n spinnaker port-forward svc/spin-deck 8080:9000",
     ]
   )
   filename        = "${path.cwd}/tunnel.sh"
