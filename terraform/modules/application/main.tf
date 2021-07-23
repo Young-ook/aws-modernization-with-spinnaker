@@ -1,10 +1,11 @@
 ### application/eks - managed kubernetes service
 module "container" {
   source             = "Young-ook/spinnaker/aws//modules/spinnaker-managed-eks"
+  version            = "2.1.15"
   name               = var.name
   tags               = var.tags
   subnets            = var.subnets
-  kubernetes_version = "1.19"
+  kubernetes_version = var.kubernetes_version
   managed_node_groups = [
     {
       name          = "default"

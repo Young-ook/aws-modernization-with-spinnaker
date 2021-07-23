@@ -4,6 +4,17 @@ variable "aws_region" {
   type        = string
 }
 
+variable "azs" {
+  description = "The aws availability zones to deploy"
+  type        = list
+}
+
+### kubernetes
+variable "kubernetes_version" {
+  description = "The target version of kubernetes"
+  type        = string
+}
+
 ### description
 variable "name" {
   description = "The logical name of the module instance"
