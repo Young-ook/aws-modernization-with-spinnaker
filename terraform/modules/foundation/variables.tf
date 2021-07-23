@@ -1,8 +1,7 @@
 ### network
 variable "azs" {
   description = "A list of availability zones for the vpc"
-  type        = list(string)
-  default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
+  type        = list
 }
 
 variable "cidr" {

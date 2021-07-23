@@ -45,10 +45,10 @@ module "spinnaker" {
   version            = "2.1.8"
   name               = "spinnaker"
   tags               = var.tags
-  region             = "ap-northeast-2"
-  azs                = ["ap-northeast-2a", "ap-northeast-2b", "ap-northeast-2c"]
-  cidr               = "10.0.0.0/16"
-  kubernetes_version = "1.19"
+  region             = var.aws_region
+  azs                = var.azs
+  cidr               = var.cidr
+  kubernetes_version = var.kubernetes_version
   kubernetes_node_groups = [
     {
       name          = "default"
