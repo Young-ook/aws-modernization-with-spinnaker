@@ -7,3 +7,7 @@ On “day one,” you’ll start by setting up the infrastructure for the vote s
 Before “day two,” you’ll have the opportunity to apply service mesh on your environment to ensure that what you set up is working as expected. You’ll also learn how to manage the complicated distributed system effectively for “day two.”
 
 Workshop: https://bit.ly/3x7xekN
+
+## Related Projects
++ [Terraform module: Amazon EKS](https://github.com/Young-ook/terraform-aws-eks)
++ [Terraform module: Spinnaker](https://github.com/Young-ook/terraform-aws-spinnaker)
