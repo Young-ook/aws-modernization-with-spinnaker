@@ -29,7 +29,7 @@ weight: 11
 
 * ap-northeast-2 (Asia Pacific - Seoul)
 
-오른쪽 상단에서 **Asia Pacific (Seoul)ap-northeast-2**를 선택하세요.
+오른쪽 상단에서 **Asia Pacific (Seoul) ap-northeast-2**를 선택하세요.
 
 ![Event Engine Region](/images/aws/event-engine-region.png)
 
