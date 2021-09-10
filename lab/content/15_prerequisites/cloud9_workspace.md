@@ -1,7 +1,7 @@
 ﻿---
 title: "Cloud9 IDE 환경"
 chapter: false
-weight: 11
+weight: 13
 ---
 
 ## Cloud9 실습 환경 구성 하기
