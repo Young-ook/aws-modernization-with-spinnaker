@@ -10,6 +10,10 @@ weight: 30
 
 그리고, EKS와 함께 사용할 수 있는 유용한 추가 기능들을 설치합니다. 본 실습에서는 테라폼의 Helm 프로바이더를 이용하여 App Mesh Controller, Amazon CloudWatch ContainerInsights Agents, AWS ALB Ingress Controller를 설치합니다.
 
+{{% notice info %}}
+본 실습예제에서 EKS를 생성할 때 사용한 코드의 자세한 내용은 [terraform-aws-spinnaker/modules/spinnaker-managed-eks](https://github.com/Young-ook/terraform-aws-spinnaker/tree/main/modules/spinnaker-managed-eks) 에 있으며 여기서 사용하는 테라폼 모듈의 원본은 [terraform-aws-eks](https://github.com/Young-ook/terraform-aws-eks) 저장소에 있습니다.
+{{% /notice %}}
+
 ### 테라폼 준비
 
 먼저 테라폼 수행을 위한 준비를 합니다. 필요한 테라폼 모듈과 프로바이더([provider](https://registry.terraform.io/browse/providers))를 자동으로 내려받습니다. 프로바이더는 클라우드 제공자의 API를 감싸서 만든 것입니다. Foundation 구축 단계에서 이미 수행한 적이 있다면 넘어가도 좋습니다.

@@ -1,7 +1,7 @@
 ---
 title: "Terraform 설치"
 chapter: false
-weight: 13
+weight: 12
 ---
 
 실습 예제에서는 테라폼([terraform](https://terraform.io)), 쿠버네티스 컨트롤([kubectl](https://kubernetes.io/docs/reference/kubectl/overview/))과 같은 도구를 사용합니다.
@@ -18,7 +18,8 @@ weight: 13
 터미널에서 다음의 명령을 입력하여 테라폼을 설치할 수 있습니다.
 
 ```sh
-curl --silent --location "https://releases.hashicorp.com/terraform/0.13.5/terraform_0.13.5_linux_amd64.zip" -o /tmp/terraform.zip
+export TF_VER=0.13.5
+curl --silent --location "https://releases.hashicorp.com/terraform/${TF_VER}/terraform_${TF_VER}_linux_amd64.zip" -o /tmp/terraform.zip
 ```
 
 내려받은 파일을 압축해제 합니다.

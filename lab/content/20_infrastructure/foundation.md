@@ -8,6 +8,10 @@ weight: 20
 
 파운데이션(Foundation) 모듈은 어플리케이션이 실행될 환경인 VPC를 생성합니다. VPC는 인터넷에 연결되어 있는 Public Subnet과 인터넷과 격리되어 있는 Private Subnet으로 이루어집니다. Private Subnet은 NAT (Network Address Translation)을 통해서 인터넷과 통신할 수 있습니다. 그리고 Private Subnet은 VPC 엔드포인트와 연결되어 있습니다. Private Subnet에 위치한 인스턴스들은 VPC 엔드포인트를 통하여 외부 통신 없이 AWS의 서비스룰 호출할 수 있습니다.
 
+{{% notice info %}}
+본 실습예제에서 VPC를 생성할 때 사용한 코드의 자세한 내용은 [terraform-aws-spinnaker/modules/spinnaker-aware-aws-vpc](https://github.com/Young-ook/terraform-aws-spinnaker/tree/main/modules/spinnaker-aware-aws-vpc) 저장소에 있습니다.
+{{% /notice %}}
+
 ### 테라폼 준비
 
 먼저 테라폼 수행을 위한 준비를 합니다. 필요한 테라폼 모듈과 프로바이더([provider](https://registry.terraform.io/browse/providers))를 자동으로 내려받습니다. 프로바이더는 클라우드 제공자의 API를 감싸서 만든 것입니다.

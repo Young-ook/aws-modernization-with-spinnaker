@@ -23,7 +23,7 @@ weight: 30
 
 배포할 어플리케이션 설정 파일을 지정하기 위해서 S3 화면으로 이동합니다. *spinnaker-xxxxx-artifact* 버켓으로 이동해서 *1-base-app-v1.yaml* 을 선택합니다. 객체에 대한 자세한 정보를 표시하는 화면으로 이동했다면, S3 객체 URI 앞에 있는 작은 사각형이 두 개 겹쳐있는 모양을 누릅니다. *S3 URI 복사됨* 팝업을 확인했으면, 다시 스핀에커 파이프라인 편집 화면으로 돌아갑니다.
 
-![spinnaker-s3-artifact-bucket-copy-uri](/images/spinnaker/s3-artifact-bucket-copy-uri.png)
+![spinnaker-s3-artifact-bucket-copy-uri-base-app-v1](/images/spinnaker/s3-artifact-bucket-copy-uri-base-app-v1.png)
 
 배포환경 설정을 이어서 진행합니다.
 

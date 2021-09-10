@@ -30,3 +30,7 @@ Forwarding from [::1]:8080 -> 9000
 ![spinnaker-first-look](/images/spinnaker/spinnaker-first-look.png)
 
 🎉 축하합니다. 위와 같은 화면이 보인다면 성공적으로 접속한 것입니다.
+
+{{% notice info %}}
+본 실습예제에서 Spinnaker를 생성할 때 사용한 코드의 자세한 내용은 [terraform-aws-spinnaker](https://github.com/Young-ook/terraform-aws-spinnaker) 저장소에 있습니다.
+{{% /notice %}}

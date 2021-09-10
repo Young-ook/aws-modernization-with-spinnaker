@@ -13,7 +13,7 @@ weight: 10
 먼저 테라폼 수행을 위한 준비를 합니다. 필요한 테라폼 모듈과 프로바이더([provider](https://registry.terraform.io/browse/providers))를 자동으로 내려받습니다. 프로바이더는 클라우드 제공자의 API를 감싸서 만든 것입니다.
 
 ```sh
-cd backend
+cd ~/environment/aws-modernization-with-spinnaker/terraform/backend
 terraform init
 ```
 
@@ -27,11 +27,23 @@ terraform apply
 
 ### 테라폼 백엔드 설정 복사
 
-테라폼 백엔드를 만드는 작업을 완료하면 같은 디렉토리에 테라폼 백엔드를 지정하는 코드가 생성됩니다. 이 파일을 실습에서 사용할 수 있도록 옮겨 줍니다.
+테라폼 백엔드를 만드는 작업을 완료하면 같은 디렉토리에 테라폼 백엔드를 지정하는 코드가 생성됩니다. 파일을 열어서 보면 아래와 비슷한 형식으로 되어 있습니다. 테라폼 작업 상태를 보관할 S3 버켓의 이름이 자동으로 들어가 있습니다. 해당 버켓은 테라폼으로 생성하였으며, 이름의 맨 마지막에 임의의 문자를 붙여서 중복을 회피 하도록 설계 하였습니다. 자세한 내용은 [terraform-aws-tfstate-backend](https://github.com/Young-ook/terraform-aws-tfstate-backend) 저장소에 있습니다.
 
 ```sh
-mv backend.tf ../
-cd ../
+terraform {
+  backend "s3" {
+    region = "ap-northeast-2"
+    bucket = "hello-tfstate-gyyqc"
+    key    = "state"
+  }
+}
+```
+
+이 파일을 실습에서 사용할 수 있도록 옮겨 줍니다.
+
+```sh
+mv backend.tf ~/environment/aws-modernization-with-spinnaker/terraform/
+cd ~/environment/aws-modernization-with-spinnaker/terraform/
 ```
 
 이제 안전하게 인프라스트럭처를 구성할 준비가 되었습니다. 다음 단계로 이동하여 인프라스트럭처를 생성을 시작합니다.

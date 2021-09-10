@@ -1,7 +1,7 @@
 ---
 title: "Kubernetes CLI 설치"
 chapter: false
-weight: 12
+weight: 11
 ---
 
 실습 예제에서는 테라폼([terraform](https://terraform.io)), 쿠버네티스 컨트롤([kubectl](https://kubernetes.io/docs/reference/kubectl/overview/))과 같은 도구를 사용합니다.

@@ -19,7 +19,7 @@ weight: 60
 
 배포할 어플리케이션 설정 파일을 지정하기 위해서 S3 화면으로 이동합니다. *spinnaker-xxxxx-artifact* 버켓으로 이동해서 *4-weighted-route.yaml* 을 선택합니다. 객체에 대한 자세한 정보를 표시하는 화면으로 이동했다면, S3 객체 URI 앞에 있는 작은 사각형이 두 개 겹쳐있는 모양을 누릅니다. *S3 URI 복사됨* 팝업을 확인했으면, 다시 스핀에커 파이프라인 편집 화면으로 돌아갑니다.
 
-![spinnaker-s3-artifact-bucket-copy-uri](/images/spinnaker/s3-artifact-bucket-copy-uri.png)
+![spinnaker-s3-artifact-bucket-copy-uri-weighted-route](/images/spinnaker/s3-artifact-bucket-copy-uri-weighted-route.png)
 
 배포환경 설정을 이어서 진행합니다.
 
@@ -30,7 +30,7 @@ weight: 60
    - **Account:** platform
    - **Object Path:** s3://spinnaker-xxxxx-artifact/4-weighted-route.yaml
 
-![spinnaker-pipeline-base-app-v1-artifact-object](/images/spinnaker/pipeline-base-app-v1-artifact-object.png)
+![spinnaker-pipeline-weighted-route-artifact-object](/images/spinnaker/pipeline-weighted-route-artifact-object.png)
 
 화면 맨 아래 **Save Changes**를 눌러서 저장합니다.
 저장 후 변경사항이 반영 된 것을 확인했으면, 파이프라인 빠져 나오기 화살표를 눌러서 파이프라인 편집 화면 밖으로 이동합니다. 화면 위 쪽, **build**라고 되어 있는 파이프라인 이름 옆에 작은 화살표가 있습니다.
