@@ -6,7 +6,7 @@ variable "aws_region" {
 
 variable "azs" {
   description = "A list of availability zones for the vpc"
-  type        = list
+  type        = list(any)
 }
 
 variable "cidr" {
@@ -23,7 +23,7 @@ variable "kubernetes_version" {
 
 variable "eks_kubeconfig" {
   description = "Attributes of eks kubeconfig for spinnaker integration (halconfig)"
-  type        = map
+  type        = map(any)
 }
 
 ### description
