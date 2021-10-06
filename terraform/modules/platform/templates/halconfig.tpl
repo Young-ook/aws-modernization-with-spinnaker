@@ -5,6 +5,8 @@ export KUBECONFIG=spinnaker_kubeconfig
 ${spinnaker_update_kubeconfig}
 mv kubeconfig spinnaker_kubeconfig
 
+${halyard_kubectl_exec} hal config version edit --version 1.26.6
+
 ${halyard_kubectl_exec} hal config ci codebuild account add platform \
   --account-id ${aws_account_id} \
   --assume-role ${spinnaker_managed_aws_role} \
