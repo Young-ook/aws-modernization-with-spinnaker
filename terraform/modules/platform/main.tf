@@ -51,7 +51,7 @@ module "artifact" {
 ### platform/spinnaker
 module "spinnaker" {
   source             = "Young-ook/spinnaker/aws"
-  version            = "2.2.2"
+  version            = "2.2.3"
   name               = "spinnaker"
   tags               = var.tags
   region             = var.aws_region
@@ -68,13 +68,15 @@ module "spinnaker" {
       instance_type = "m5.xlarge"
     }
   ]
+  kubernetes_policy_arns = [
+    module.artifact.policy_arns["read"],
+  ]
   aurora_cluster = {}
   s3_bucket = {
     force_destroy = true
   }
   assume_role_arn = [
     module.spinnaker-managed.role_arn,
-    module.artifact.policy_arns["read"],
   ]
 }
 
