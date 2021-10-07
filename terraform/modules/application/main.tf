@@ -5,6 +5,7 @@ module "container" {
   name               = var.name
   tags               = merge(var.tags, { release = "canary" })
   subnets            = var.subnets
+  enable_ssm         = true
   kubernetes_version = var.kubernetes_version
   managed_node_groups = [
     {
