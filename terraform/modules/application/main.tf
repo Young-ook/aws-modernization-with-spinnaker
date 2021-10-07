@@ -3,7 +3,7 @@ module "container" {
   source             = "Young-ook/spinnaker/aws//modules/spinnaker-managed-eks"
   version            = "2.1.15"
   name               = var.name
-  tags               = var.tags
+  tags               = merge(var.tags, { release = "canary" })
   subnets            = var.subnets
   kubernetes_version = var.kubernetes_version
   managed_node_groups = [

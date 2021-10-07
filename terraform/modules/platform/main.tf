@@ -71,3 +71,53 @@ module "spinnaker-managed" {
   name             = var.name
   trusted_role_arn = [module.spinnaker.role_arn]
 }
+
+### platform/fis
+resource "aws_cloudwatch_metric_alarm" "disk" {
+  alarm_name                = join("-", [var.name, "disk-usage-alarm"])
+  alarm_description         = "This metric monitors ec2 disk filesystem usage"
+  tags                      = var.tags
+  metric_name               = "node_filesystem_utilization"
+  comparison_operator       = "GreaterThanOrEqualToThreshold"
+  datapoints_to_alarm       = 1
+  evaluation_periods        = 1
+  namespace                 = "ContainerInsights"
+  period                    = 30
+  threshold                 = 60
+  extended_statistic        = "p90"
+  insufficient_data_actions = []
+
+  dimensions = {
+    ClusterName = var.eks_kubeconfig["context"]
+  }
+}
+
+resource "aws_iam_role" "fis-run" {
+  name = join("-", [var.name, "fis-run"])
+  tags = var.tags
+  assume_role_policy = jsonencode({
+    Statement = [{
+      Action = "sts:AssumeRole"
+      Effect = "Allow"
+      Principal = {
+        Service = [format("fis.%s", module.aws-partitions.partition.dns_suffix)]
+      }
+    }]
+    Version = "2012-10-17"
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "fis-run" {
+  policy_arn = format("arn:%s:iam::aws:policy/PowerUserAccess", module.aws-partitions.partition.partition)
+  role       = aws_iam_role.fis-run.id
+}
+
+### systems manager document for fault injection simulator experiment
+
+resource "aws_ssm_document" "disk-stress" {
+  name            = "FIS-Run-Disk-Stress"
+  tags            = var.tags
+  document_format = "YAML"
+  document_type   = "Command"
+  content         = file("${path.module}/templates/disk-stress.yaml")
+}
