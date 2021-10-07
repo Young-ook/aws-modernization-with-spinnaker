@@ -21,6 +21,7 @@ terraform destroy --auto-approve
 인프라스트럭처 삭제가 완료되면, 테라폼 백엔드를 정리합니다.
 
 ```sh
+rm backend.tf
 cd ~/environment/aws-modernization-with-spinnaker/terraform/backend
 terraform destroy --auto-approve
 ```
