@@ -18,7 +18,7 @@ weight: 12
 터미널에서 다음의 명령을 입력하여 테라폼을 설치할 수 있습니다.
 
 ```sh
-export TF_VER=0.13.5
+export TF_VER=1.0.3
 curl --silent --location "https://releases.hashicorp.com/terraform/${TF_VER}/terraform_${TF_VER}_linux_amd64.zip" -o /tmp/terraform.zip
 ```
 

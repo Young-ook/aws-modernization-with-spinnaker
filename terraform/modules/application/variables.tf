@@ -1,7 +1,7 @@
 ### network
 variable "subnets" {
   description = "Subnet IDs where to locate eks cluster"
-  type        = list
+  type        = list(any)
 }
 
 ### kubernetes
