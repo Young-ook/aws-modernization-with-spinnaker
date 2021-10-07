@@ -6,7 +6,7 @@ variable "aws_region" {
 
 variable "azs" {
   description = "The aws availability zones to deploy"
-  type        = list
+  type        = list(any)
 }
 
 ### kubernetes
