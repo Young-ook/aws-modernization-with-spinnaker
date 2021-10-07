@@ -33,6 +33,7 @@ module "platform" {
   tags               = var.tags
   aws_region         = var.aws_region
   azs                = var.azs
+  spinnaker_version  = "1.26.6"
   kubernetes_version = var.kubernetes_version
   eks_kubeconfig     = module.application.eks_kubeconfig
 }

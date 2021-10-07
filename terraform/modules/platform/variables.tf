@@ -26,6 +26,11 @@ variable "eks_kubeconfig" {
   type        = map(any)
 }
 
+variable "spinnaker_version" {
+  description = "The spinnaker version to deploy"
+  type        = string
+}
+
 ### description
 variable "name" {
   description = "The logical name of the module instance"

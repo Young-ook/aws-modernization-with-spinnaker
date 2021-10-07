@@ -21,7 +21,7 @@ module "ci" {
     image           = "aws/codebuild/standard:4.0"
     privileged_mode = true
     environment_variables = {
-      ARTIFACT_BUCKET = module.spinnaker.artifact_repository
+      ARTIFACT_BUCKET = module.artifact.bucket.id
       REPOSITORY_URI  = module.ecr[each.key].url
       APP_NAME        = each.key
     }
@@ -35,14 +35,23 @@ module "ci" {
   policy_arns = [
     module.ecr[each.key].policy_arns["read"],
     module.ecr[each.key].policy_arns["write"],
-    module.spinnaker.artifact_write_policy_arn,
+    module.artifact.policy_arns["write"],
   ]
+}
+
+# artifact bucket
+module "artifact" {
+  source        = "Young-ook/spinnaker/aws//modules/s3"
+  version       = "~> 2.0"
+  name          = join("-", ["artifact", var.name])
+  tags          = var.tags
+  force_destroy = true
 }
 
 ### platform/spinnaker
 module "spinnaker" {
   source             = "Young-ook/spinnaker/aws"
-  version            = "2.1.8"
+  version            = "2.2.3"
   name               = "spinnaker"
   tags               = var.tags
   region             = var.aws_region
@@ -59,7 +68,13 @@ module "spinnaker" {
       instance_type = "m5.xlarge"
     }
   ]
+  kubernetes_policy_arns = [
+    module.artifact.policy_arns["read"],
+  ]
   aurora_cluster = {}
+  s3_bucket = {
+    force_destroy = true
+  }
   assume_role_arn = [
     module.spinnaker-managed.role_arn,
   ]
@@ -69,7 +84,7 @@ module "spinnaker-managed" {
   source           = "Young-ook/spinnaker/aws//modules/spinnaker-managed-aws"
   version          = "~> 2.0"
   name             = var.name
-  trusted_role_arn = [module.spinnaker.role_arn]
+  trusted_role_arn = [module.spinnaker.role.arn]
 }
 
 ### platform/fis
