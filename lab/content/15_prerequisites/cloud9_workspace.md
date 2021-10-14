@@ -30,9 +30,4 @@ aws sts get-caller-identity --query Arn | grep DevOpsWorkshop-Admin -q && echo "
 git clone https://github.com/Young-ook/aws-modernization-with-spinnaker.git
 ```
 
-다음, **terraform** 디렉토리로 이동합니다.
-```sh
-cd aws-modernization-with-spinnaker/terraform
-```
-
 준비가 되었다면, 다음으로 진행합니다.
