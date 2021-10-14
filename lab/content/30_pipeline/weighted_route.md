@@ -17,7 +17,7 @@ weight: 60
  - **Account:** eks
  - **Namespace:** hello-xxxxx-yyyyy
 
-배포할 어플리케이션 설정 파일을 지정하기 위해서 S3 화면으로 이동합니다. *spinnaker-xxxxx-artifact* 버켓으로 이동해서 *4-weighted-route.yaml* 을 선택합니다. 객체에 대한 자세한 정보를 표시하는 화면으로 이동했다면, S3 객체 URI 앞에 있는 작은 사각형이 두 개 겹쳐있는 모양을 누릅니다. *S3 URI 복사됨* 팝업을 확인했으면, 다시 스핀에커 파이프라인 편집 화면으로 돌아갑니다.
+배포할 어플리케이션 설정 파일을 지정하기 위해서 S3 화면으로 이동합니다. *artifact-xxxx-yyyy* 버켓으로 이동해서 *4-weighted-route.yaml* 을 선택합니다. 객체에 대한 자세한 정보를 표시하는 화면으로 이동했다면, S3 객체 URI 앞에 있는 작은 사각형이 두 개 겹쳐있는 모양을 누릅니다. *S3 URI 복사됨* 팝업을 확인했으면, 다시 스핀에커 파이프라인 편집 화면으로 돌아갑니다.
 
 ![spinnaker-s3-artifact-bucket-copy-uri-weighted-route](/images/spinnaker/s3-artifact-bucket-copy-uri-weighted-route.png)
 
@@ -28,7 +28,7 @@ weight: 60
 
  + 매니페스트 소스의 세부 설정을 지정합니다. *Manifest Artifact* 옆의 목록을 누르면 *Define a new artifact* 문구가 나타납니다. 눌러서 선택하면 여러 정보들을 입력하는 화면이 나타납니다. 여기서 *Account* 를 아래와 같이 선택합니다. Object Path 부분에는 앞에서 복사한 S3 URI를 붙여넣으면 됩니다. Object Path 부분에는 앞에서 복사한 S3 URI를 붙여넣으면 됩니다.
    - **Account:** platform
-   - **Object Path:** s3://spinnaker-xxxxx-artifact/4-weighted-route.yaml
+   - **Object Path:** s3://artifact-xxxx-yyyy/4-weighted-route.yaml
 
 ![spinnaker-pipeline-weighted-route-artifact-object](/images/spinnaker/pipeline-weighted-route-artifact-object.png)
 
