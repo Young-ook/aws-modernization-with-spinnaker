@@ -17,7 +17,8 @@ module "container" {
     }
   ]
   policy_arns = [
-    "arn:aws:iam::aws:policy/AWSXRayDaemonWriteAccess"
+    "arn:aws:iam::aws:policy/AWSXRayDaemonWriteAccess",
+    "arn:aws:iam::aws:policy/AWSAppMeshEnvoyAccess",
   ]
 }
 
