@@ -10,4 +10,5 @@ Workshop: https://bit.ly/3x7xekN
 
 ## Related Projects
 + [Terraform module: Amazon EKS](https://github.com/Young-ook/terraform-aws-eks)
++ [Terraform module: Amazon SageMaker](https://github.com/Young-ook/terraform-aws-sagemaker)
 + [Terraform module: Spinnaker](https://github.com/Young-ook/terraform-aws-spinnaker)
