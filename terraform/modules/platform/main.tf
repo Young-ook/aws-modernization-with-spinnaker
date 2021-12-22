@@ -41,8 +41,7 @@ module "ci" {
 
 # artifact bucket
 module "artifact" {
-  source        = "Young-ook/spinnaker/aws//modules/s3"
-  version       = "~> 2.0"
+  source        = "Young-ook/sagemaker/aws//modules/s3"
   name          = join("-", ["artifact", var.name])
   tags          = var.tags
   force_destroy = true

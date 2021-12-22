@@ -26,8 +26,8 @@ cd ~/environment/aws-modernization-with-spinnaker/terraform/backend
 terraform destroy --auto-approve
 ```
 
-삭제가 완료되면, AWS 콘솔로 가서 CloudWatch 서비스로 이동합니다. 로그 그룹(Log groups)를 선택하고 검색 창에서 *hello*를 입력합니다. 그림과 같이 '/aws/codebuild', '/aws/containerinsights/'로 시작하는 로그 그룹을 선택한 다음 삭제 합니다.
+삭제가 완료되면, AWS 콘솔로 가서 CloudWatch 서비스로 이동합니다. 로그 그룹(Log groups)를 선택하고 검색 창에서 `hello` 를 입력합니다. 그림과 같이 '/aws/codebuild', '/aws/containerinsights/'로 시작하는 로그 그룹을 선택한 다음 삭제 합니다.
 
 ![delete-log-groups](/images/aws/delete-log-groups.png)
 
-삭제가 완료되면 AWS 콘솔로 들어가서 IAM 서비스로 이동합니다. 역할(Roles)을 선택하고 *DevOpsWorkshop-Admin* 을 검색합니다. 해당 역할을 선택 후 삭제 합니다. 다음, Cloud9 서비스로 이동합니다. 작업을 위해 생성한 환경을 삭제합니다.
+삭제가 완료되면 AWS 콘솔로 들어가서 IAM 서비스로 이동합니다. 역할(Roles)을 선택하고 `DevOpsWorkshop-Admin` 을 검색합니다. 해당 역할을 선택 후 삭제 합니다. 다음, Cloud9 서비스로 이동합니다. 작업을 위해 생성한 환경을 삭제합니다.
