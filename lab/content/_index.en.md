@@ -1,10 +1,10 @@
 ---
-title: "Well-Architected Containers with DevOps"
+title: "AWS Modernization with Spinnaker"
 chapter: true
 weight: 1
 ---
 
-# Well-Architected Containers with DevOps
+# AWS Modernization with Spinnaker
 
 ### Welcome
 This workshop is hands-on lab for containerized microservices architecture application deployment as new SRE engineer in your team.

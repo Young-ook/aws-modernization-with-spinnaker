@@ -1,10 +1,10 @@
 ---
-title: "Well-Architected Containers with DevOps"
+title: "AWS Modernization with Spinnaker"
 chapter: true
 weight: 1
 ---
 
-# Well-Architected Containers with DevOps
+# AWS Modernization with Spinnaker
 
 ### 환영합니다
 이 워크샵은 신입 SRE(Site Reliability Engineer)의 입장에서 컨테이터기반의 마이크로서비스 환경을 구축해보는 실습 예제입니다. 복잡한 구조의 서비스를 어떻게 잘 구성하고, 관리할 수 있는 지 살펴 볼 것입니다.
