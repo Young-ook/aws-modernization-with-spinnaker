@@ -1,7 +1,7 @@
 ---
-title: "1.4 플랫폼"
+title: "1.3 플랫폼"
 chapter: false
-weight: 40
+weight: 30
 ---
 
 ## 플랫폼
