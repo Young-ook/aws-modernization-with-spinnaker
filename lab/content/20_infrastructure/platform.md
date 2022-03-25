@@ -13,6 +13,9 @@ weight: 40
 먼저 테라폼 수행을 위한 준비를 합니다. 필요한 테라폼 모듈과 프로바이더([provider](https://registry.terraform.io/browse/providers))를 자동으로 내려받습니다. 프로바이더는 클라우드 제공자의 API를 감싸서 만든 것입니다. Foundation 구축 단계에서 이미 수행한 적이 있다면 넘어가도 좋습니다.
 
 ```sh
+cd ~/environment/terraform-aws-spinnaker/examples/aws-modernization-with-spinnaker/
+```
+```sh
 terraform init
 ```
 

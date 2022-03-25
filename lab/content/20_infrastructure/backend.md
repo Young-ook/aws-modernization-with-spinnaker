@@ -13,7 +13,9 @@ weight: 10
 먼저 테라폼 수행을 위한 준비를 합니다. 필요한 테라폼 모듈과 프로바이더([provider](https://registry.terraform.io/browse/providers))를 자동으로 내려받습니다. 프로바이더는 클라우드 제공자의 API를 감싸서 만든 것입니다.
 
 ```sh
-cd ~/environment/aws-modernization-with-spinnaker/terraform/backend
+cd ~/environment/terraform-aws-spinnaker/examples/aws-modernization-with-spinnaker/backend
+```
+```sh
 terraform init
 ```
 
@@ -42,8 +44,8 @@ terraform {
 이 파일을 실습에서 사용할 수 있도록 옮겨 줍니다.
 
 ```sh
-mv backend.tf ~/environment/aws-modernization-with-spinnaker/terraform/
-cd ~/environment/aws-modernization-with-spinnaker/terraform/
+mv backend.tf ~/environment/terraform-aws-spinnaker/examples/aws-modernization-with-spinnaker/
+cd ~/environment/terraform-aws-spinnaker/examples/aws-modernization-with-spinnaker/
 ```
 
 이제 안전하게 인프라스트럭처를 구성할 준비가 되었습니다. 다음 단계로 이동하여 인프라스트럭처를 생성을 시작합니다.

@@ -6,16 +6,23 @@ weight: 20
 
 ## 파운데이션
 
-파운데이션(Foundation) 모듈은 어플리케이션이 실행될 환경인 VPC를 생성합니다. VPC는 인터넷에 연결되어 있는 Public Subnet과 인터넷과 격리되어 있는 Private Subnet으로 이루어집니다. Private Subnet은 NAT (Network Address Translation)을 통해서 인터넷과 통신할 수 있습니다. 그리고 Private Subnet은 VPC 엔드포인트와 연결되어 있습니다. Private Subnet에 위치한 인스턴스들은 VPC 엔드포인트를 통하여 외부 통신 없이 AWS의 서비스룰 호출할 수 있습니다.
+파운데이션(Foundation) 모듈은 애플리케이션이 실행될 환경인 VPC (Virtual Private Cloud)와 EKS (Elastic Kubernetes Service) 클러스터를 생성합니다. VPC는 인터넷에 연결되어 있는 Public Subnet과 인터넷과 격리되어 있는 Private Subnet으로 이루어집니다. Private Subnet은 NAT (Network Address Translation)을 통해서 인터넷과 통신할 수 있습니다. 그리고 Private Subnet은 VPC 엔드포인트와 연결되어 있습니다. Private Subnet에 위치한 인스턴스들은 VPC 엔드포인트를 통하여 외부 통신 없이 AWS의 서비스룰 호출할 수 있습니다.
+
+그리고, EKS와 함께 사용할 수 있는 유용한 추가 기능들을 설치합니다. 본 실습에서는 테라폼의 Helm 프로바이더를 이용하여 App Mesh Controller, Amazon CloudWatch ContainerInsights Agents, AWS Load Balancer Controller를 설치합니다.
 
 {{% notice info %}}
 본 실습예제에서 VPC를 생성할 때 사용한 코드의 자세한 내용은 [terraform-aws-spinnaker/modules/spinnaker-aware-aws-vpc](https://github.com/Young-ook/terraform-aws-spinnaker/tree/main/modules/spinnaker-aware-aws-vpc) 저장소에 있습니다.
+
+본 실습예제에서 EKS를 생성할 때 사용한 코드의 자세한 내용은 [terraform-aws-spinnaker/modules/spinnaker-managed-eks](https://github.com/Young-ook/terraform-aws-spinnaker/tree/main/modules/spinnaker-managed-eks) 에 있으며 여기서 사용하는 테라폼 모듈의 원본은 [terraform-aws-eks](https://github.com/Young-ook/terraform-aws-eks) 저장소에 있습니다.
 {{% /notice %}}
 
 ### 테라폼 준비
 
 먼저 테라폼 수행을 위한 준비를 합니다. 필요한 테라폼 모듈과 프로바이더([provider](https://registry.terraform.io/browse/providers))를 자동으로 내려받습니다. 프로바이더는 클라우드 제공자의 API를 감싸서 만든 것입니다.
 
+```sh
+cd ~/environment/terraform-aws-spinnaker/examples/aws-modernization-with-spinnaker/
+```
 ```sh
 terraform init
 ```
@@ -26,10 +33,10 @@ terraform init
 terraform apply -target module.foundation
 ```
 
-명령을 수행하면, AWS 자원을 생성하기 위한 실행 계획이 표시됩니다. 테라폼 코드를 바탕으로 어떠한 자원을 생성할 지, 몇 개를 만들 지 등을 미리 보기 할 수 있습니다. 마지막으로 실제 **반영**할 것인지 확인하는 절차가 나오며, *yes* 를 입력해서 다음으로 넘어갑니다.
+명령을 수행하면, AWS 자원을 생성하기 위한 실행 계획이 표시됩니다. 테라폼 코드를 바탕으로 어떠한 자원을 생성할 지, 몇 개를 만들 지 등을 미리 보기 할 수 있습니다. 마지막으로 실제 **반영**할 것인지 확인하는 절차가 나오며, *yes* 를 입력해서 다음으로 넘어갑니다. 테라폼 실행 화면에 반영 중인 시간이 표시됩니다. 보통 EKS 클러스터를 만드는 시간이 약 15분 정도 걸립니다.
 
 <pre>
- # module.application.module.container.module.frigga.random_string.suffix will be created
+ # module.foundation.module.eks.module.frigga.random_string.suffix will be created
   + resource "random_string" "suffix" {
       + id          = (known after apply)
       + length      = 5
@@ -86,12 +93,12 @@ Do you want to perform these actions?
 다음과 같이 실행 상황을 볼 수 있습니다.
 
 <pre>
-module.application.module.container.module.eks.random_string.eks-suffix: Creating...
+module.application.module.eks.module.eks.random_string.eks-suffix: Creating...
 module.frigga.random_string.suffix: Creating...
-module.application.module.container.module.frigga.random_string.suffix: Creating...
+module.application.module.eks.module.frigga.random_string.suffix: Creating...
 module.foundation.module.vpc.module.frigga.random_string.suffix: Creating...
-module.application.module.container.module.eks.random_string.eks-suffix: Creation complete after 0s [id=brainidgllor]
-module.application.module.container.module.frigga.random_string.suffix: Creation complete after 0s [id=ruqym]
+module.application.module.eks.module.eks.random_string.eks-suffix: Creation complete after 0s [id=brainidgllor]
+module.application.module.eks.module.frigga.random_string.suffix: Creation complete after 0s [id=ruqym]
 module.frigga.random_string.suffix: Creation complete after 0s [id=xrymv]
 module.foundation.module.vpc.module.frigga.random_string.suffix: Creation complete after 0s [id=sorpe]
 module.foundation.module.vpc.aws_eip.ngw["ap-northeast-2a"]: Creating...
