@@ -12,7 +12,9 @@ weight: 20
 
 {{% notice info %}}
 본 실습예제에서 VPC를 생성할 때 사용한 코드의 자세한 내용은 [terraform-aws-spinnaker/modules/spinnaker-aware-aws-vpc](https://github.com/Young-ook/terraform-aws-spinnaker/tree/main/modules/spinnaker-aware-aws-vpc) 저장소에 있습니다.
+{{% /notice %}}
 
+{{% notice info %}}
 본 실습예제에서 EKS를 생성할 때 사용한 코드의 자세한 내용은 [terraform-aws-spinnaker/modules/spinnaker-managed-eks](https://github.com/Young-ook/terraform-aws-spinnaker/tree/main/modules/spinnaker-managed-eks) 에 있으며 여기서 사용하는 테라폼 모듈의 원본은 [terraform-aws-eks](https://github.com/Young-ook/terraform-aws-eks) 저장소에 있습니다.
 {{% /notice %}}
 
