@@ -9,6 +9,9 @@ weight: 10
 EC2 실습 환경으로 돌아옵니다. 여전히 Port Forward 로그가 찍히고 있을 것입니다. *ctrl + c* 를 눌러서 Port Forward 프로세스를 종료합니다. 다음, 인프라스트럭처 삭제 사전 작업으로 어플리케이션에서 생성한 자원을 삭제합니다. 다음과 같이 스크립트를 수행합니다. 쿠버네티스 네임스페이스를 삭제하는 시간이 오래 걸리니 스크립트가 종료될 때까지 중단하지 않도록 합니다.
 
 ```sh
+cd ~/environment/terraform-aws-spinnaker/examples/aws-modernization-with-spinnaker/
+```
+```sh
 ./preuninstall.sh
 ```
 
@@ -22,7 +25,7 @@ terraform destroy --auto-approve
 
 ```sh
 rm backend.tf
-cd ~/environment/aws-modernization-with-spinnaker/terraform/backend
+cd ~/environment/terraform-aws-spinnaker/examples/aws-modernization-with-spinnaker/backend
 terraform destroy --auto-approve
 ```
 
