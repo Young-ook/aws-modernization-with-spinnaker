@@ -1,10 +1,10 @@
 ﻿---
-title: "Cloud9 IDE 환경"
+title: "Cloud9 IDE 환경구성"
 chapter: false
 weight: 13
 ---
 
-## Cloud9 실습 환경 구성 하기
+## Cloud9 실습환경 구성하기
 
 Cloud9 환경으로 들어가서 다음 명령어를 실행하여 필수 구성 요소를 설치합니다.
 ```sh
