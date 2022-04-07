@@ -1,5 +1,5 @@
 ---
-title: "Kubernetes CLI 설치"
+title: "쿠버네티스(Kubernetes) 도구 설치"
 chapter: false
 weight: 11
 ---

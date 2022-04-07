@@ -1,5 +1,5 @@
 ﻿---
-title: "Cloud9 IDE Setup"
+title: "Setup Cloud9 IDE"
 chapter: false
 weight: 13
 ---
