@@ -1,5 +1,5 @@
 ---
-title: "단계 1: 인프라스트럭처"
+title: "인프라스트럭처"
 chapter: true
 weight: 20
 ---

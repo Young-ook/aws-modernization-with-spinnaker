@@ -22,7 +22,7 @@ aws sts get-caller-identity --query Arn | grep DevOpsWorkshop-Admin -q && echo "
 
 Check that the output region information is correct and the result of 'IAM role valid' is output.
 
-## Clone the Lab example codes
+## Clone the Lab example code repository
 
 Clone the example source code from the repository.
 ```sh
