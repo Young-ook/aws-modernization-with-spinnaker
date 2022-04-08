@@ -30,3 +30,6 @@ git clone https://github.com/Young-ook/terraform-aws-spinnaker.git
 ```
 
 When ready, proceed to the next step.
+
+## Prerequisites
+In this lab, we use [Terraform](https://terraform.io), and [Kubernetes-cli](https://kubernetes.io/docs/reference/kubectl/overview/). Follow the instructions in the next step to install the prerequisites.
