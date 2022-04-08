@@ -1,4 +1,4 @@
-title = "Well-Architected Containers with DevOps"
+title = "AWS Modernization with Spinnaker"
 theme = "hugo-theme-learn"
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= "true"
@@ -15,7 +15,7 @@ baseURL = "/"
   # Author of the site, will be used in meta information
   author = "Young-ook"
   # Description of the site, will be used in meta information
-  description = "Well-Architected Containers with DevOps"
+  description = "AWS Modernization with Spinnaker"
   # Shows a checkmark for visited pages on the menu
   showVisitedLinks = true
   # Disable search function. It will hide search bar
@@ -54,6 +54,11 @@ name = "<i class='fas fa-tools'></i> AWS 빌더스 라이브러리"
 url = "https://aws.amazon.com/builders-library/"
 weight = 11
 
+[[languages.ko.menu.shortcuts]]
+name = "<i class='fas fa-tools'></i> 카오스 엔지니어링"
+url = "https://main.du62hltyts3rv.amplifyapp.com/ko/"
+weight = 11
+
 [languages.en]
 languageName = "English"
 languageCode = "en-us"
@@ -63,6 +68,11 @@ weight = 2
 [[languages.en.menu.shortcuts]]
 name = "<i class='fas fa-tools'></i> AWS Builders Library"
 url = "https://aws.amazon.com/builders-library/"
+weight = 11
+
+[[languages.en.menu.shortcuts]]
+name = "<i class='fas fa-tools'></i> Chaos Engineering"
+url = "https://main.du62hltyts3rv.amplifyapp.com/en/"
 weight = 11
 
 [markup]
