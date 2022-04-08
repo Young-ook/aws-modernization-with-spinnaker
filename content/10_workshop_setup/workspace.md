@@ -1,7 +1,7 @@
 ---
 title: "작업 환경 만들기"
 chapter: false
-weight: 14
+weight: 13
 ---
 
 {{% notice warning %}}

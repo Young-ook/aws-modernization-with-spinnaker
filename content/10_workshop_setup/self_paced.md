@@ -1,9 +1,15 @@
 ---
-title: "AWS 계정 생성"
-chapter: false
-weight: 13
+title: "자체 계정에서 실행"
+chapter: true
+weight: 12
 ---
 
+## 자체 계정에서 워크샵 실습하기
+{{% notice warning %}}
+워크샵을 직접 실행하는 경우에만 이 섹션을 따라하세요. AWS에서 주최하는 이벤트 (예 : re:Invent, Kubecon, Immersion Day 등)인 경우라면, [AWS 호스팅 이벤트 참석](aws_host.md)의 안내를 따르시기 바랍니다.
+{{% /notice %}}
+
+## AWS 계정 생성
 {{% notice warning %}}
 계정에는 새 IAM 역할을 생성하고 다른 IAM 권한의 범위를 지정할 수있는 권한이 있어야 합니다.
 {{% /notice %}}
@@ -22,3 +28,4 @@ weight: 13
 ![사용자 확인](/images/aws/iam-3-create-user.png)
 
 1. 로그인 URL을 기록하고 다음을 저장합니다.
+
