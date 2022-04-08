@@ -1,7 +1,7 @@
 ﻿---
 title: "Setup Cloud9 IDE"
 chapter: false
-weight: 13
+weight: 14
 ---
 
 ## Setup Cloud9 Workspace

@@ -1,10 +1,55 @@
 ﻿---
 title: "Cloud9 IDE 환경 구성"
 chapter: false
-weight: 13
+weight: 14
 ---
 
-## Cloud9 실습환경 구성하기
+{{% notice warning %}}
+Cloud9 작업 환경은 루트 계정 사용자가 아닌 관리자 권한이 있는 IAM 사용자가 구축해야 합니다. 루트 계정 사용자가 아닌 IAM 사용자로 로그인했는지 확인하십시오.
+{{% /notice %}}
+
+{{% notice info %}}
+이 워크샵은 **Seoul (ap-northeast-2)** 지역에서 실행되도록 설계되었습니다. **다른 지역에서는 실행하지 마십시오.** 이 워크숍의 향후 버전에서는 지역 가용성이 확대되며 이 메시지는 제거됩니다.
+{{% /notice %}}
+
+{{% notice tip %}}
+Cloud9 도메인에 대해 광고 차단기, 자바 스크립트 비활성화기 및 추적 차단기를 비활성화 해야합니다. 그렇지 않으면 작업 환경에 대한 연결이 영향을 받을 수 있습니다.
+Cloud9에는 타사 쿠키가 필요합니다. [특정 도메인](https://docs.aws.amazon.com/cloud9/latest/user-guide/troubleshooting.html#troubleshooting-env-loading)을 화이트리스트에 추가 할 수 있습니다.
+{{% /notice %}}
+
+### Cloud9 시작:
+Cloud9 환경을 만듭니다. [https://ap-northeast-2.console.aws.amazon.com/cloud9/home?region=ap-northeast-2](https://ap-northeast-2.console.aws.amazon.com/cloud9/home?region=ap-northeast-2)
+
+{{% notice warning %}}
+Cloud9 환경의 이름을 *DevOpsWorkshop* 으로 지정합니다.
+{{% /notice %}}
+
+- **Create environment**를 선택합니다.
+- 이름을 **`DevOpsWorkshop`**으로 지정하고 다른 모든 기본값을 사용합니다.
+- Cloud9이 시작되면 **welcome tab** 및 **lower work area** 을 닫고 기본 작업 환경에서 새 **terminal** 탭을 열어 환경을 사용자 지정합니다.
+![c9before](/images/aws/c9-init.png)
+
+- 이제 작업 환경이 다음과 같아야합니다.
+![c9after](/images/aws/c9-terminal.png)
+
+- 이 테마가 마음에 들면, Cloud9 작업 환경 메뉴에서 **View / Themes / Solarized / Solarized Dark**를 선택하여 직접 선택할 수 있습니다.
+
+
+## IAM 역할 연결
+1. [Cloud9 EC2 인스턴스를 찾으려면 이 링크](https://console.aws.amazon.com/ec2/v2/home?#Instances:tag:Name=aws-cloud9-.*workshop.*;sort=desc:launchTime)를 참고하세요.
+
+1. 인스턴스를 선택한 다음 **Actions / Security / Modify IAM role**을 선택합니다.
+![c9instancerole](/images/aws/c9-modify-instance-iam-role.png)
+
+1. **IAM Role** 드롭 다운에서 **`DevOpsWorkshop-Admin`**을 선택하고 **Save**을 선택합니다.
+![c9attachrole](/images/aws/c9-attach-admin-role.png)
+
+- 작업 환경으로 돌아가서 톱니 바퀴 아이콘(오른쪽 상단 모서리에 있음)을 클릭하거나 클릭하여 새 탭을 열고 "Open Preferences"를 선택합니다.
+- **AWS Settings**를 선택합니다.
+- **AWS managed temporary credentials** 끕니다.
+- 환경 설정 탭 닫습니다.
+
+![c9disableiam](/images/aws/c9-setting-disable-iam-role.png)
 
 Cloud9 환경으로 들어가서 다음 명령어를 실행하여 필수 구성 요소를 설치합니다.
 ```sh

@@ -1,7 +1,7 @@
 ---
 title: "Install Terraform CLI"
 chapter: false
-weight: 12
+weight: 15
 ---
 
 ## Terraform

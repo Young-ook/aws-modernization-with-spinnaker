@@ -1,7 +1,7 @@
 ---
 title: "테라폼(Terraform) 도구 설치"
 chapter: false
-weight: 12
+weight: 15
 ---
 
 ## 테라폼 (Terraform)

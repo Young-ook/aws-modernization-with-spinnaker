@@ -1,7 +1,7 @@
 ---
 title: "쿠버네티스(Kubernetes) 도구 설치"
 chapter: false
-weight: 11
+weight: 16
 ---
 
 쿠버네티스 명령줄 도구인 [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-linux)은 쿠버네티스 클러스터를 관리하기 위하여 사용합니다. 그리고 이 도구를 이용해서 어플리케이션을 배포하기도하고 클러스터 자원을 관리하기도 합니다. 그리고 로그를 볼 때 사용하기도 합니다.
