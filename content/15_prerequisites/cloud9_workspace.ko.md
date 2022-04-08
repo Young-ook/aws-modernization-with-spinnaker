@@ -1,5 +1,5 @@
 ﻿---
-title: "Cloud9 IDE 환경구성"
+title: "Cloud9 IDE 환경 구성"
 chapter: false
 weight: 13
 ---
