@@ -1,5 +1,5 @@
 ---
-title: "단계 2: 파이프라인"
+title: "파이프라인"
 chapter: true
 weight: 30
 ---

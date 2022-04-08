@@ -1,5 +1,5 @@
 ---
-title: "단계 3: 관찰 가능성"
+title: "관찰 가능성"
 chapter: true
 weight: 40
 ---
