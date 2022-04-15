@@ -5,7 +5,7 @@ weight: 50
 ---
 
 ## 메시드 앱(Meshed App) V2
-새 버전의 어플리케이션 서버를 배포합니다. AWS CodeBuild 파이프라인에서 생성한 새로운 컨테이너 이미지를 이용하여 배포할 것 입니다.
+새 버전의 애플리케이션 서버를 배포합니다. AWS CodeBuild 파이프라인에서 생성한 새로운 컨테이너 이미지를 이용하여 배포할 것 입니다.
 
 ### 배포 파이프라인 설정
 새 파이프라인을 생성합니다. 화면 오른 쪽 윗 부분에 파이프라인 생성 단추가 있습니다. 파이프라인 이름으로 `meshed-app-v2` 입력하고 확인을 누릅니다. *Add Stage* 를 눌러서 스테이지의 종류를 선택합니다. 이 번에는 배포를 할 것이므로 *Deploy (Manifest)*를 선택합니다.
@@ -15,7 +15,7 @@ weight: 50
  - **Account:** eks
  - **Namespace:** hello-xxxxx-yyyyy
 
-배포할 어플리케이션 설정 파일을 지정하기 위해서 S3 화면으로 이동합니다. *artifact-xxxx-yyyy* 버켓으로 이동해서 *3-meshed-app-v2.yaml* 을 선택합니다. 객체에 대한 자세한 정보를 표시하는 화면으로 이동했다면, S3 객체 URI 앞에 있는 작은 사각형이 두 개 겹쳐있는 모양을 누릅니다. *S3 URI 복사됨* 팝업을 확인했으면, 다시 스핀에커 파이프라인 편집 화면으로 돌아갑니다.
+배포할 애플리케이션 설정 파일을 지정하기 위해서 S3 화면으로 이동합니다. *artifact-xxxx-yyyy* 버켓으로 이동해서 *3-meshed-app-v2.yaml* 을 선택합니다. 객체에 대한 자세한 정보를 표시하는 화면으로 이동했다면, S3 객체 URI 앞에 있는 작은 사각형이 두 개 겹쳐있는 모양을 누릅니다. *S3 URI 복사됨* 팝업을 확인했으면, 다시 스핀에커 파이프라인 편집 화면으로 돌아갑니다.
 
 ![spinnaker-s3-artifact-bucket-copy-uri-meshed-app-v2](/images/spinnaker/s3-artifact-bucket-copy-uri-meshed-app-v2.png)
 
@@ -38,5 +38,5 @@ weight: 50
 
 ![spinnaker-pipeline-meshed-app-v2](/images/spinnaker/pipeline-meshed-app-v2.png)
 
-### 어플리케이션 확인
-새로운 버전의 어플리케이션이 배포가 되었지만, ALB를 통해서 접속한 서비스는 '새로고침'을 반복해도 변화가 없습니다. 컨테이너만 배포를 했을 뿐, App Mesh에서 트래픽을 새 버전의 서버로 보내지 않고 있기 때문입니다.
+### 애플리케이션 확인
+새로운 버전의 애플리케이션이 배포가 되었지만, ALB를 통해서 접속한 서비스는 '새로고침'을 반복해도 변화가 없습니다. 컨테이너만 배포를 했을 뿐, App Mesh에서 트래픽을 새 버전의 서버로 보내지 않고 있기 때문입니다.

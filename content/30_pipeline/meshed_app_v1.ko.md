@@ -1,11 +1,11 @@
 ---
-title: "메시드 앱(Messhed App) v1"
+title: "메시드 앱(Meshed App) v1"
 chapter: false
 weight: 40
 ---
 
 ## 메시드 앱(Meshed App) v1
-기본 설정 어플리케이션에 App Mesh를 적용합니다.
+기본 설정 애플리케이션에 App Mesh를 적용합니다.
 
 ### 배포 파이프라인 설정
 새 파이프라인을 생성합니다. 화면 오른 쪽 윗 부분에 파이프라인 생성 단추가 있습니다. 파이프라인 이름으로 `meshed-app-v1` 입력하고 확인을 누릅니다. *Add Stage* 를 눌러서 스테이지의 종류를 선택합니다. 이 번에는 배포를 할 것이므로 *Deploy (Manifest)*를 선택합니다.
@@ -15,7 +15,7 @@ weight: 40
  - **Account:** eks
  - **Namespace:** hello-xxxxx-yyyyy
 
-배포할 어플리케이션 설정 파일을 지정하기 위해서 S3 화면으로 이동합니다. *artifact-xxxx-yyyy* 버켓으로 이동해서 *2-meshed-app-v1.yaml* 을 선택합니다. 객체에 대한 자세한 정보를 표시하는 화면으로 이동했다면, S3 객체 URI 앞에 있는 작은 사각형이 두 개 겹쳐있는 모양을 누릅니다. *S3 URI 복사됨* 팝업을 확인했으면, 다시 스핀에커 파이프라인 편집 화면으로 돌아갑니다.
+배포할 애플리케이션 설정 파일을 지정하기 위해서 S3 화면으로 이동합니다. *artifact-xxxx-yyyy* 버켓으로 이동해서 *2-meshed-app-v1.yaml* 을 선택합니다. 객체에 대한 자세한 정보를 표시하는 화면으로 이동했다면, S3 객체 URI 앞에 있는 작은 사각형이 두 개 겹쳐있는 모양을 누릅니다. *S3 URI 복사됨* 팝업을 확인했으면, 다시 스핀에커 파이프라인 편집 화면으로 돌아갑니다.
 
 ![spinnaker-s3-artifact-bucket-copy-uri-meshed-app-v1](/images/spinnaker/s3-artifact-bucket-copy-uri-meshed-app-v1.png)
 
@@ -39,10 +39,10 @@ weight: 40
 ![spinnaker-pipeline-meshed-app-v1](/images/spinnaker/pipeline-meshed-app-v1.png)
 
 ### 사이드카 주입
-App Mesh를 생성했지만, 어플리케이션은 여전히 이전 상태로 동작하고 있습니다. 그래서 Rolling Restart 를 실행해서 포드가 재시작하도록 해야 합니다. 포드를 재시작할 때 사이드카 프록시도 함께 주입됩니다. 클러스터 화면에 표시된 모든 DB, Redis, Appserver, UI 디플로이먼트 재시작 합니다. 잠시 기다리면 v002 클러스터가 생깁니다. 4개의 디플로이먼트가 v002로 표시되면 재시작을 완료한 것입니다.
+App Mesh를 생성했지만, 애플리케이션은 여전히 이전 상태로 동작하고 있습니다. 그래서 Rolling Restart 를 실행해서 포드가 재시작하도록 해야 합니다. 포드를 재시작할 때 사이드카 프록시도 함께 주입됩니다. 클러스터 화면에 표시된 모든 DB, Redis, Appserver, UI 디플로이먼트 재시작 합니다. 잠시 기다리면 v002 클러스터가 생깁니다. 4개의 디플로이먼트가 v002로 표시되면 재시작을 완료한 것입니다.
 
 ![spinnaker-deployment-rolling-restart](/images/spinnaker/deployment-rolling-restart.png)
 
-어플리케이션이 새 버전(v002)으로 표시되면 포드를 선택하고, 오른 쪽의 자세히 보기 화면에서 *Console Ourput* 을 누릅니다. 그러면 아래와 같이 포드 안의 컨테이너들의 로그를 볼 수 있습니다. ENVOY, XRAY_DAEMON이 함께 보인다면 제대로 반영된 것입니다.
+애플리케이션이 새 버전(v002)으로 표시되면 포드를 선택하고, 오른 쪽의 자세히 보기 화면에서 *Console Ourput* 을 누릅니다. 그러면 아래와 같이 포드 안의 컨테이너들의 로그를 볼 수 있습니다. ENVOY, XRAY_DAEMON이 함께 보인다면 제대로 반영된 것입니다.
 
 ![yelbv2-app-logs](/images/spinnaker/yelbv2-app-logs.png)

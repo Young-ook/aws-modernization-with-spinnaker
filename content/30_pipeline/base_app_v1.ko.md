@@ -5,7 +5,7 @@ weight: 30
 ---
 
 ## 베이스 앱
-기본 설정의 컨테이터 어플리케이션을 배포 합니다. 데이터베이스, 캐시, 어플리케이션 서버, UI 서버를 배포합니다.
+기본 설정의 컨테이터 애플리케이션을 배포 합니다. 데이터베이스, 캐시, 애플리케이션 서버, UI 서버를 배포합니다.
 
 ### 배포 파이프라인 설정
 새 파이프라인을 생성합니다. 화면 오른 쪽 윗 부분에 파이프라인 생성 단추가 있습니다. 파이프라인 이름으로 `base-app-v1` 입력하고 확인을 누릅니다. *Add Stage* 를 눌러서 스테이지의 종류를 선택합니다. 이 번에는 배포를 할 것이므로 *Deploy (Manifest)*를 선택합니다.
@@ -19,7 +19,7 @@ weight: 30
 
 ![spinnaker-pipeline-base-app-v1-namespace](/images/spinnaker/pipeline-base-app-v1-namespace.png)
 
-배포할 어플리케이션 설정 파일을 지정하기 위해서 S3 화면으로 이동합니다. *artifact-xxxx-yyyy* 버켓으로 이동해서 *1-base-app-v1.yaml* 을 선택합니다. 객체에 대한 자세한 정보를 표시하는 화면으로 이동했다면, S3 객체 URI 앞에 있는 작은 사각형이 두 개 겹쳐있는 모양을 누릅니다. *S3 URI 복사됨* 팝업을 확인했으면, 다시 스핀에커 파이프라인 편집 화면으로 돌아갑니다.
+배포할 애플리케이션 설정 파일을 지정하기 위해서 S3 화면으로 이동합니다. *artifact-xxxx-yyyy* 버켓으로 이동해서 *1-base-app-v1.yaml* 을 선택합니다. 객체에 대한 자세한 정보를 표시하는 화면으로 이동했다면, S3 객체 URI 앞에 있는 작은 사각형이 두 개 겹쳐있는 모양을 누릅니다. *S3 URI 복사됨* 팝업을 확인했으면, 다시 스핀에커 파이프라인 편집 화면으로 돌아갑니다.
 
 ![spinnaker-s3-artifact-bucket-copy-uri-base-app-v1](/images/spinnaker/s3-artifact-bucket-copy-uri-base-app-v1.png)
 

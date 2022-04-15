@@ -1,5 +1,5 @@
 ---
-title: "Messhed App v1"
+title: "Meshed App v1"
 chapter: false
 weight: 40
 ---
