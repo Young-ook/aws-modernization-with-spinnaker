@@ -18,37 +18,30 @@ Cloud9에는 타사 쿠키가 필요합니다. [특정 도메인](https://docs.a
 {{% /notice %}}
 
 ### Cloud9 시작:
-Cloud9 환경을 만듭니다. [https://ap-northeast-2.console.aws.amazon.com/cloud9/home?region=ap-northeast-2](https://ap-northeast-2.console.aws.amazon.com/cloud9/home?region=ap-northeast-2)
+[Cloud9 서비스 콘솔](https://ap-northeast-2.console.aws.amazon.com/cloud9/home?region=ap-northeast-2) 에서 Cloud9 환경을 새로 만듭니다.
 
 {{% notice warning %}}
 Cloud9 환경의 이름을 *DevOpsWorkshop* 으로 지정합니다.
 {{% /notice %}}
 
-- **Create environment**를 선택합니다.
-- 이름을 **`DevOpsWorkshop`**으로 지정하고 다른 모든 기본값을 사용합니다.
-- Cloud9이 시작되면 **welcome tab** 및 **lower work area** 을 닫고 기본 작업 환경에서 새 **terminal** 탭을 열어 환경을 사용자 지정합니다.
+**Create environment**를 선택합니다. 이름을 **`DevOpsWorkshop`**으로 지정하고 다른 모든 기본값을 사용합니다. Cloud9이 시작되면 **welcome tab** 및 **lower work area** 을 닫고 기본 작업 환경에서 새 **terminal** 탭을 열어 환경을 사용자 지정합니다.
 ![c9before](/images/aws/c9-init.png)
 
-- 이제 작업 환경이 다음과 같아야합니다.
+이제 작업 환경이 다음과 같아야합니다.
 ![c9after](/images/aws/c9-terminal.png)
 
-- 이 테마가 마음에 들면, Cloud9 작업 환경 메뉴에서 **View / Themes / Solarized / Solarized Dark**를 선택하여 직접 선택할 수 있습니다.
-
+이 테마가 마음에 들면, Cloud9 작업 환경 메뉴에서 **View / Themes / Solarized / Solarized Dark**를 선택하여 직접 선택할 수 있습니다.
 
 ## IAM 역할 연결
-1. [Cloud9 EC2 인스턴스를 찾으려면 이 링크](https://console.aws.amazon.com/ec2/v2/home?#Instances:tag:Name=aws-cloud9-.*workshop.*;sort=desc:launchTime)를 참고하세요.
+Cloud9 EC2 인스턴스를 찾으려면 [EC2 서비스 콘솔](https://console.aws.amazon.com/ec2/v2/home?#Instances:tag:Name=aws-cloud9-.*workshop.*;sort=desc:launchTime)을 참고하세요.
 
-1. 인스턴스를 선택한 다음 **Actions / Security / Modify IAM role**을 선택합니다.
+인스턴스를 선택한 다음 **Actions / Security / Modify IAM role**을 선택합니다.
 ![c9instancerole](/images/aws/c9-modify-instance-iam-role.png)
 
-1. **IAM Role** 드롭 다운에서 **`DevOpsWorkshop-Admin`**을 선택하고 **Save**을 선택합니다.
+**IAM Role** 드롭 다운에서 **`DevOpsWorkshop-Admin`**을 선택하고 **Save**을 선택합니다.
 ![c9attachrole](/images/aws/c9-attach-admin-role.png)
 
-- 작업 환경으로 돌아가서 톱니 바퀴 아이콘(오른쪽 상단 모서리에 있음)을 클릭하거나 클릭하여 새 탭을 열고 "Open Preferences"를 선택합니다.
-- **AWS Settings**를 선택합니다.
-- **AWS managed temporary credentials** 끕니다.
-- 환경 설정 탭 닫습니다.
-
+작업 환경으로 돌아가서 톱니 바퀴 아이콘(오른쪽 상단 모서리에 있음)을 클릭합니다. **AWS Settings**를 선택하고, **AWS managed temporary credentials** 를 끕니다. 그리고 환경 설정 탭을 닫습니다.
 ![c9disableiam](/images/aws/c9-setting-disable-iam-role.png)
 
 Cloud9 환경으로 들어가서 다음 명령어를 실행하여 필수 구성 요소를 설치합니다.
