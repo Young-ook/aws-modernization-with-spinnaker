@@ -1,16 +1,14 @@
 ---
-title: "2.5 메시드 앱 v2"
+title: "메시드 앱(Meshed App) v2"
 chapter: false
 weight: 50
 ---
 
 ## 메시드 앱(Meshed App) V2
-
 새 버전의 어플리케이션 서버를 배포합니다. AWS CodeBuild 파이프라인에서 생성한 새로운 컨테이너 이미지를 이용하여 배포할 것 입니다.
 
 ### 배포 파이프라인 설정
-
-새 파이프라인을 생성합니다. 화면 오른 쪽 윗 부분에 파이프라인 생성 단추가 있습니다. 파이프라인 이름으로 `meshed-app-v2` 입력하고 확인을 누릅니다. *Add stage* 를 눌러서 스테이지의 종류를 선택합니다. 이 번에는 배포를 할 것이므로 **Deploy (Manifest)**를 선택합니다.
+새 파이프라인을 생성합니다. 화면 오른 쪽 윗 부분에 파이프라인 생성 단추가 있습니다. 파이프라인 이름으로 `meshed-app-v2` 입력하고 확인을 누릅니다. *Add Stage* 를 눌러서 스테이지의 종류를 선택합니다. 이 번에는 배포를 할 것이므로 *Deploy (Manifest)*를 선택합니다.
 
 필요한 정보를 선택합니다. Account는 *eks* 를 선택하고 Namespace는 *Override Namespace* 를 눌러서 나오는 목록 중 *hello* 로 시작하는 것을 선택합니다. (네임스페이스 이름의 뒷 10자리는 테라폼을 수행할 때 자동으로 지정되는 pet name 이므로 상황에 따라 달라질 수 있습니다)
 
@@ -32,15 +30,13 @@ weight: 50
 
 ![spinnaker-pipeline-meshed-app-v2-artifact-object](/images/spinnaker/pipeline-meshed-app-v2-artifact-object.png)
 
-화면 맨 아래 **Save Changes**를 눌러서 저장합니다.
-저장 후 변경사항이 반영 된 것을 확인했으면, 파이프라인 빠져 나오기 화살표를 눌러서 파이프라인 편집 화면 밖으로 이동합니다. 화면 위 쪽, **build**라고 되어 있는 파이프라인 이름 옆에 작은 화살표가 있습니다.
+화면 맨 아래 *Save Changes*를 눌러서 저장합니다.
+저장 후 변경사항이 반영 된 것을 확인했으면, 파이프라인 빠져 나오기 화살표를 눌러서 파이프라인 편집 화면 밖으로 이동합니다. 화면 위 쪽, *build*라고 되어 있는 파이프라인 이름 옆에 작은 화살표가 있습니다.
 
 ### 배포 파이프라인 실행
-
 파이프라인 설정이 되었으면, *Start Manual Execution* 을 눌러서 파이프라인을 실행합니다.
 
 ![spinnaker-pipeline-meshed-app-v2](/images/spinnaker/pipeline-meshed-app-v2.png)
 
 ### 어플리케이션 확인
-
 새로운 버전의 어플리케이션이 배포가 되었지만, ALB를 통해서 접속한 서비스는 '새로고침'을 반복해도 변화가 없습니다. 컨테이너만 배포를 했을 뿐, App Mesh에서 트래픽을 새 버전의 서버로 보내지 않고 있기 때문입니다.

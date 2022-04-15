@@ -1,16 +1,14 @@
 ---
-title: "2.3 베이스 앱 v1"
+title: "베이스 앱 v1"
 chapter: false
 weight: 30
 ---
 
 ## 베이스 앱
-
 기본 설정의 컨테이터 어플리케이션을 배포 합니다. 데이터베이스, 캐시, 어플리케이션 서버, UI 서버를 배포합니다.
 
 ### 배포 파이프라인 설정
-
-새 파이프라인을 생성합니다. 화면 오른 쪽 윗 부분에 파이프라인 생성 단추가 있습니다. 파이프라인 이름으로 `base-app-v1` 입력하고 확인을 누릅니다. *Add stage* 를 눌러서 스테이지의 종류를 선택합니다. 이 번에는 배포를 할 것이므로 **Deploy (Manifest)**를 선택합니다.
+새 파이프라인을 생성합니다. 화면 오른 쪽 윗 부분에 파이프라인 생성 단추가 있습니다. 파이프라인 이름으로 `base-app-v1` 입력하고 확인을 누릅니다. *Add Stage* 를 눌러서 스테이지의 종류를 선택합니다. 이 번에는 배포를 할 것이므로 *Deploy (Manifest)*를 선택합니다.
 
 ![spinnaker-pipeline-base-app-v1-deploy-stage](/images/spinnaker/pipeline-base-app-v1-deploy-stage.png)
 
@@ -36,17 +34,15 @@ weight: 30
 
 ![spinnaker-pipeline-base-app-v1-artifact-object](/images/spinnaker/pipeline-base-app-v1-artifact-object.png)
 
-화면 맨 아래 **Save Changes**를 눌러서 저장합니다.
-저장 후 변경사항이 반영 된 것을 확인했으면, 파이프라인 빠져 나오기 화살표를 눌러서 파이프라인 편집 화면 밖으로 이동합니다. 화면 위 쪽, **build**라고 되어 있는 파이프라인 이름 옆에 작은 화살표가 있습니다.
+화면 맨 아래 *Save Changes*를 눌러서 저장합니다.
+저장 후 변경사항이 반영 된 것을 확인했으면, 파이프라인 빠져 나오기 화살표를 눌러서 파이프라인 편집 화면 밖으로 이동합니다. 화면 위 쪽, *build*라고 되어 있는 파이프라인 이름 옆에 작은 화살표가 있습니다.
 
 ### 배포 파이프라인 실행
-
 파이프라인 설정이 되었으면, *Start Manual Execution* 을 눌러서 파이프라인을 실행합니다.
 
 ![spinnaker-pipeline-base-app-v1](/images/spinnaker/pipeline-base-app-v1.png)
 
 ### 배포 결과물 확인
-
 배포가 성공했으면, 스핀에커 왼 쪽의 메뉴에서 클러스터를 누릅니다. 컨테이너 정보들이 나타날 것입니다. 왼 쪽 메뉴의 로드 발란서를 누르면 쿠버네티스 인그레스와 서비스가 표시됩니다. 인그레스를 선택하면 화면 오른 쪽에 자세한 정보가 표시되며, 접속 도메인이 표시됩니다.
 
 ![ingress-dns](/images/spinnaker/ingress-dns.png)
