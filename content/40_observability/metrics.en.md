@@ -1,5 +1,5 @@
 ---
-title: "Metric"
+title: "Metrics"
 chapter: false
 weight: 10
 ---
