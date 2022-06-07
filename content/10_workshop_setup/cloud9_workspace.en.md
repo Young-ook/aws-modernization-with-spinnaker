@@ -63,7 +63,7 @@ Check that the output region information is correct and the result of 'IAM role 
 
 Clone the example source code from the repository.
 ```sh
-git clone https://github.com/Young-ook/terraform-aws-spinnaker.git
+git clone -b '2.3.1' --single-branch --depth 1 https://github.com/Young-ook/terraform-aws-spinnaker.git
 ```
 
 When ready, proceed to the next step.

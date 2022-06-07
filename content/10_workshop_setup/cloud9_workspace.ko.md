@@ -64,7 +64,7 @@ aws sts get-caller-identity --query Arn | grep DevOpsWorkshop-Admin -q && echo "
 ## 실습 예제 받기
 다음과 같이 명령을 수행하여 예제를 내려 받기합니다.
 ```sh
-git clone https://github.com/Young-ook/terraform-aws-spinnaker.git
+git clone -b '2.3.1' --single-branch --depth 1 https://github.com/Young-ook/terraform-aws-spinnaker.git
 ```
 
 준비가 되었다면, 다음으로 진행합니다.
